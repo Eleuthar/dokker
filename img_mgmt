@@ -1,0 +1,92 @@
+
+~~~~~~~~~~~~~~~~~~~~~~  Dockerfile  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FROM <base img:version>
+
+WORKDIR <DIRpath>
+
+ENV <VAR> <VALUE>
+	\\ any docker img process can access the ENV
+	
+COPY <SOURCE> <DPATH>
+
+RUN <cmd>
+
+COPY . <DPATH>
+
+CMD ["cmd", "arg"]
+	\\ run default cmd as container
+	
+	
+
+~~~~~~~~~~~~~~~~~~~~~~  docker-compose.yml  ~~~~~~~~~~~~~~~~~~~~~
+
+* combo Dockerfile + other services, adding functionality like port mapping
+
+version: '2'
+
+services:
+	web:
+		build:
+			context: .
+			dockerfile: Dockerfile
+		container_name: web
+		ports:
+			- "8080:80"
+	
+	db:
+		image: mongo:3.6.1
+		container_name: db
+		volumes:
+			- mongodb:/data/db
+			- mongodb_config:/data/configdb
+		ports:
+			- 27017:27017
+		command: mongod
+	
+	volumes:
+		mongod:
+		mongodb_config:
+		
+		
+
+# docker-compose up -d
+	\\ create & start img
+
+# docker-compose down
+	\\ stop & remove img
+	
+
+
+~~~~~~~~~~~~~~~~~~~~~~~  docker  ~~~~~~~~~~~~~~~~~~~~~
+
+# docker build --tag demoIMG <pathToDockerfile>
+
+# docker images
+	\\ list loaded images
+
+# docker ps -a
+	\\ show all containers, default ps shows only running img
+
+# docker start\stop <img>
+
+# docker rm <container>
+
+# docker rmi <img>
+	
+# docker run -p 8080:80 --name <alias> -d <img>
+	\\ run img in background
+	
+# docker logs -f <img>
+	\\ follow log output
+	
+# docker tag <localImg:[tag]> <repo:[tag]>
+
+# docker login -u <uzr>
+
+# docker push <repo:[tag]>
+
+# docker exec <containerID> <cmd>
+
+# docker run -it <img> <cmd>
+	\\ run cmd on new container
