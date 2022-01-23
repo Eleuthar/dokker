@@ -1,0 +1,24 @@
+
+~~~~~~~~~~~~~~~~~~~~~~  named volume  ~~~~~~~~~~~~~~~~~~~~~
+
+- connect specific container fs path back to the host machine
+
+
+CMD
+````
+# docker volume create <volume>
+
+# docker run -dp 3567:3567 -v <volume>:<containerDbDir> <container>
+
+
+
+~~~~~~~~~~~~~~~~~~~  bind mount  ~~~~~~~~~~~~~~~~~~~~~~~
+
+- control the exact mountpoint on the host
+- mount source code into container to let it see code change
+	ex: "nodemon" watches for file change and restart app
+	
+	
+CMD
+````
+# docker run -dp 3456:3000 -w <workingDir> -v <path-to-dir>:<containerDir> <baseImg> <cmd>
