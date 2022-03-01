@@ -16,6 +16,12 @@ COPY . <DPATH>
 
 CMD ["cmd", "arg"]
 	\\ run default cmd as container
+
+
+$ docker build -f /path/to/Dockerfile .
+
+$ docker build -t image-name docker-file-location
+	\\ build image from Dockerfile
 	
 	
 
@@ -86,7 +92,7 @@ services:
 
 # docker push <repo:[tag]>
 
-# docker exec <containerID> <cmd>
+# docker exec -it <containerID> <cmd>
 
 # docker run -it <img> <cmd>
 	\\ run cmd on new container
