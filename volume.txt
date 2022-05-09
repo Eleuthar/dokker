@@ -8,7 +8,7 @@ CMD
 ````
 # docker volume create <volume>
 
-# docker run -dp 3567:3567 -v <volume>:<containerDbDir> <container>
+# docker run -dp 3567:3567 -v <volume>:<containerDir> <container>
 
 
 
@@ -16,7 +16,7 @@ CMD
 
 - control the exact mountpoint on the host
 - mount source code into container to let it see code change
-	ex: "nodemon" watches for file change and restart app
+	ex: "nodemon" watches nodeJS app for file change and restart
 	
 	
 CMD

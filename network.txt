@@ -7,5 +7,15 @@
 	-e MYSQL_ROOT_PASSWORD=secret \
 	-e MYSQL_DATABASE=todos \
 	mysql:5.7
+
+
+-- network-alias is used to connect to the DB without knowing the IP
+	-- otherwise we would need to use networking tools from nicolaka/netshoot to find out the IP:
+		$ docker run -it --network <network> nicolaka/netshoot
+		$ dig <network-alias>
+
+
+-- env var must be used only for dev purpose, not production (ex: use Kubernetes secret file)
+
 	
-# 
+#  

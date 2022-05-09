@@ -1,4 +1,21 @@
+~~~~~~~~~ SECURITY SCAN before build ~~~~~~~~~
+
+# docker scan --login
+	\\ login to docker hub
+
+# docker scan <img>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~ FREQUENT CMD ~~~~~~~~~~
+
 # docker build --tag demoIMG <pathToDockerfile>
+	\\ build img
+
+# docker image history --no-trunc <img>
+	\\ get full output of img layers within img
 
 # docker images
 	\\ list loaded images
