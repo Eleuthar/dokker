@@ -1,5 +1,5 @@
 
-~~~~~~~~~~~~~~~~~~~~~~  NAMED VOLUME  ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~  named volume  ~~~~~~~~~~~~~~~~~~~~~
 
 - connect specific container fs path back to the host machine
 
@@ -12,7 +12,7 @@ CMD
 
 
 
-~~~~~~~~~~~~~~~~~~~  BIND MOUNT  ~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~  bind mount  ~~~~~~~~~~~~~~~~~~~~~~~
 
 - control the exact mountpoint on the host
 - mount source code into container to let it see code change
