@@ -1,3 +1,6 @@
+https://blog.logrocket.com/dockerizing-django-app/
+
+
 ~~~~~~~~~ SECURITY SCAN before build ~~~~~~~~~
 
 # docker scan --login
